@@ -24,6 +24,10 @@ depois instale as dependências no venv
 ``` bash
 pip install flask yt-dlp
 ```
+agora crie a pasta videos
+``` bash
+mkdir videos
+```
 e após tudo isso execute.
 ``` bash
 python3 main.py
