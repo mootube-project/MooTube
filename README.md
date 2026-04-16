@@ -1,5 +1,9 @@
 # MooTube
 o MooTube é um gerenciador de downloads do youtube com capacidade de organização básica e pesquisa.
+
+## AVISO!!!
+esse projeto ainda está muito básico, não é pra produção.
+
 ## funcionalidades
 
 - gerenciar videos
@@ -59,6 +63,4 @@ python3 main.py
 
 ## contribuição
 contribua fazendo forks e pullrequests, não tem muitas regras
-## aviso
-esse projeto ainda está muito básico, não é pra produção.
 
