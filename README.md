@@ -17,7 +17,7 @@ esse projeto ainda está muito básico, não é pra produção.
 
 para instalar temos dois métodos oficiais, Dockerfile e manual
 
-## método Dockerfile(recomendado)
+## método Dockerfile(recomendado para uso no pc principal)
 
 primeiro clone o dockerfile
 
@@ -33,7 +33,7 @@ e após tudo isso execute
 ```bash
 sudo docker run -it mootube
 ```
-## método manual
+## método manual (recomendado pra servers selfhost)
 
 para instalar primeiro precisamos copiar o código fonte do github em zip, via gitclone ou interface gráfica
 
