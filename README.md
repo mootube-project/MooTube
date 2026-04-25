@@ -16,7 +16,7 @@ esse projeto ainda está muito básico, não é pra produção.
 
 para instalar temos dois métodos oficiais, Dockerfile e manual
 
-## método Dockerfile(recomendado para uso no pc principal)
+## método Dockerfile(recomendado para exposição ou servers externos)
 
 primeiro clone o dockerfile
 
