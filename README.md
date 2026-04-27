@@ -26,7 +26,7 @@ wget https://raw.githubusercontent.com/pixelcatBR/mootube/main/Dockerfile
 após isso gere uma build dele
 
 ```bash
-sudo docker build -t mootube
+sudo docker build -t mootube .
 ```
 e após tudo isso execute
 ```bash
