@@ -156,7 +156,6 @@ def add_security_headers(response):
 @app.route("/atualizar")
 def atualizar():
     try:
-        subprocess.run(["apt", "update", "-y"], check=True, capture_output=True)
         subprocess.run(["pip", "install", "-U", "flask", "yt-dlp", "--break-system-packages"], check=True, capture_output=True)
 
         return render_template('update-sucess.html')
