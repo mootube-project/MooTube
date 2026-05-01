@@ -159,7 +159,7 @@ def atualizar():
     try:
         subprocess.run(["apt", "update"])
         time.sleep(1)
-        subprocess.run(r"pip list --outdated --format=freeze | grep -v '^\-e' | cut -d '=' -f 1 | xargs -n1 pip install -U", shell=True)
+        subprocess.run(r"pip list --outdated --format=freeze | grep -v '^\-e' | cut -d '=' -f 1 | xargs -n1 pip install -U --break-system-packages", shell=True)
     except:
         return render_template('update-error.html')
 
