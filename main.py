@@ -153,6 +153,16 @@ def add_security_headers(response):
     response.headers['X-Frame-Options'] = 'DENY'
     return response
 
+@app.route("/atualizar")
+
+def atualizar():
+    try:
+        subprocess.run(["apt", "update"])
+        time.sleep(1)
+        subprocess.run(r"pip list --outdated --format=freeze | grep -v '^\-e' | cut -d '=' -f 1 | xargs -n1 pip install -U", shell=True)
+    except:
+        return render_template('update-error.html')
+
 if __name__ == '__main__':
 
     app.run(host='0.0.0.0', port=5000)
