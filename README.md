@@ -16,7 +16,7 @@ esse projeto está até funcional, mas não recomendo expor na internet se você
 
 para instalar temos dois métodos oficiais, Dockerfile e manual
 
-## método Dockerfile(recomendado por ser fácil de instalar)
+## método Dockerfile(recomendado por ser fácil de instalar e com melhor suporte)
 
 primeiro abra o seu programa de tetminal e digite isso:
 
@@ -49,7 +49,11 @@ e após tudo isso execute.
 python3 main.py
 ```
 ele vai te dar o ip e é só usar
-
+## passos pós instalação
+após instalar:
+- baixe alguns vídeos e salve para você assistir sem internet.
+- verifique se não há uma nova atualização, aperte o botão atualizar e verificar que você vai baixar a versão mais recente.
+- use docker start -i mootube-server após ter rodado o run uma vez para rodar mootube com os vídeos que você já baixou.
 ## licença
  esse projeto está licensiado sobre a licença do mit, leia o arquivo de licença para mais detalhes
 
