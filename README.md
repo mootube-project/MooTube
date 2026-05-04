@@ -17,7 +17,7 @@ para instalar temos dois métodos oficiais, Dockerfile e manual
 
 ## método Dockerfile(recomendado por ser fácil de instalar e com melhor suporte)
 
-primeiro abra o seu programa de tetminal e digite isso:
+primeiro abra o seu programa de terminal e digite isso:
 
 ```bash
 sudo docker run --name mootube-server -p 5000:5000 pixelcatbr/mootube
