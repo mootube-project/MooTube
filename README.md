@@ -7,10 +7,9 @@ esse projeto está até funcional, mas não recomendo expor na internet se você
 ## funcionalidades
 
 - gerenciar videos
-    - videos do youtube
+    - contamos com um sistema de gerenciamento de vídeos 
 - baixar vídeos externos
-    - via ytsearch do yt-dlp
-    - baixa um video apenas
+    - integração com downloads de vídeos do YouTube
 
 ## como instalar
 
