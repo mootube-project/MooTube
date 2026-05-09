@@ -13,14 +13,13 @@ esse projeto está até funcional, mas não recomendo expor na internet se você
 
 ## como instalar
 
-para instalar temos dois métodos oficiais, Dockerfile e manual
+para instalar temos dois métodos oficiais, Docker e manual
 
-## método Dockerfile(recomendado por ser fácil de instalar e com melhor suporte)
-
+## método Docker(recomendado por ser fácil de instalar e com melhor suporte)
 primeiro abra o seu programa de terminal e digite isso:
 
 ```bash
-sudo docker run --name mootube-server -p 5000:5000 pixelcatbr/mootube
+mkdir ~/mootube && sudo docker run --name mootube-server -p 5000:5000 -v ~/mootube:/mootube/videos pixelcatbr/mootube
 ```
 acesse a interface web pelo endereço na tela e pronto
 ## método manual (recomendado pra uso avançado e estudo do código)
