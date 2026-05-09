@@ -50,9 +50,11 @@ ele vai te dar o ip e é só usar
 ## passos pós instalação
 após instalar:
 - baixe alguns vídeos e salve para você assistir sem internet.
+- importe vídeos no mootube pela pasta mootube e assista eles
+- troque a pasta ```~/videos``` do comando ```mkdir ~/videos``` e ```-v ~/videos``` e também troque o nome modificando o texto depois de ```--name``` para poder ter múltiplos mootubes, exemplo: ```mkdir ~/mootube-criancas && sudo docker run --name mootube-criancas -p 5000:5000 -v ~/mootube-criancas:/mootube/videos pixelcatbr/mootube```
 - verifique se não há uma nova atualização, aperte o botão atualizar e verificar que você vai baixar a versão mais recente.
-- após atualizar use sudo docker stop mootube-server e depois use sudo docker start -i mootube-server para reiniciar
-- use sudo docker start -i mootube-server após ter rodado o run uma vez para rodar mootube com os vídeos que você já baixou.
+- após atualizar use ```sudo docker stop mootube-server && sudo docker start -i mootube-server``` para reiniciar
+- use ```sudo docker start -i mootube-server``` após ter rodado o run uma vez para rodar mootube com as suas configurações e atualizações.
 ## licença
  esse projeto está licenciado sobre a licença do mit, leia o arquivo de licença para mais detalhes
 
