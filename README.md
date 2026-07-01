@@ -1,5 +1,5 @@
 # MooTube
-o MooTube é um "YouTube" offline e auto-hospedado onde você tem o controle total dos seus dados, mas continua assistindo vídeos da plataforma original.
+o MooTube é um reprodutor de vídeos web auto-hospedado integrado com yt-dlp.
 
 ## Aviso
 esse projeto está até funcional, mas não recomendo expor na internet se você tiver conhecimento técnico para isso
