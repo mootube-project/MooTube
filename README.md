@@ -9,7 +9,7 @@ tenho duas coisas importantes a falar
 ## funcionalidades
 
 - listar vídeos com thumbs
-- reprodutor de vídeos embutido(embed do navegador)
+- reproduzir vídeos baixados e na internet(embed do navegador)
 - baixar vídeos via yt-dlp
 - listar e reproduzir vídeos do urls.txt
 
