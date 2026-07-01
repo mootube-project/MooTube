@@ -65,11 +65,15 @@ def validate_video_path(filename):
 
 os.makedirs(PASTA_VIDEOS, exist_ok=True)
 
+def ler_urls_do_arquivo():
+    try:
+        with open('urls.txt', 'r') as f:
+            return [linha.strip() for linha in f if linha.strip()]
+    except:
+        return []
+
 @app.route('/')
 def index():
-    """Página inicial - lista os vídeos"""
-    
-
     videos = []
     for arquivo in os.listdir(PASTA_VIDEOS):
         if arquivo.endswith(tuple(ALLOWED_EXTENSIONS)):
@@ -77,8 +81,10 @@ def index():
             is_safe, _ = validate_video_path(arquivo)
             if is_safe:
                 videos.append(arquivo)
+
+    urls = ler_urls_do_arquivo()
     
-    return render_template('index.html', videos=videos)
+    return render_template('index.html', videos=videos, urls=urls)
 
 @app.route('/video/<path:nome_video>')
 def serve_video(nome_video):
@@ -94,6 +100,7 @@ def serve_video(nome_video):
     response.headers['X-Content-Type-Options'] = 'nosniff'
     
     return response
+
 
 @app.route('/pesquisar')
 @rate_limit
@@ -177,6 +184,9 @@ def deletar_video(nome_video):
     except:
         return render_template('delete-error.html')
   
+@app.route("/license")
+def license():
+    return render_template("license.html")
 if __name__ == '__main__':
 
     app.run(host='0.0.0.0', port=5000)
