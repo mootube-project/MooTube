@@ -16,10 +16,14 @@ esse projeto está até funcional, mas não recomendo expor na internet se você
 para instalar temos dois métodos oficiais, Docker e manual
 
 ## método Docker(recomendado por ser fácil de instalar e com melhor suporte)
-primeiro abra o seu programa de terminal e digite isso:
+primeiro abra o terminal do seu servidor e digite isso:
 
 ```bash
 mkdir ~/mootube && sudo docker run --name mootube-server -p 5000:5000 -v ~/mootube:/mootube/videos pixelcatbr/mootube
+```
+ou digite isso(opcional)
+```bash
+sudo docker run --name mootube-server -p 5000:5000 pixelcatbr/mootube
 ```
 acesse a interface web pelo endereço na tela e pronto
 ## método manual (recomendado pra uso avançado e estudo do código)
@@ -51,13 +55,14 @@ ele vai te dar o ip e é só usar
 após instalar:
 - baixe alguns vídeos e salve para você assistir sem internet.
 - importe vídeos no mootube pela pasta mootube e assista eles
+- crie seu urls.txt para seus vídeos na internet
 - troque a pasta ```~/videos``` do comando ```mkdir ~/videos``` e ```-v ~/videos``` e também troque o nome modificando o texto depois de ```--name``` para poder ter múltiplos mootubes, exemplo: ```mkdir ~/mootube-criancas && sudo docker run --name mootube-criancas -p 5000:5000 -v ~/mootube-criancas:/mootube/videos pixelcatbr/mootube```
 - verifique se não há uma nova atualização, aperte o botão atualizar e verificar que você vai baixar a versão mais recente.
 - após atualizar use ```sudo docker stop mootube-server && sudo docker start -i mootube-server``` para reiniciar
 - use ```sudo docker start -i mootube-server``` após ter rodado o run uma vez para rodar mootube com as suas configurações e atualizações.
 ## licença
- esse projeto está licenciado sobre a licença do mit, leia o arquivo de licença para mais detalhes
+ esse projeto está licenciado sobre a licença do mit, tome cuidado ao distribuir o código.
 
 ## contribuição
-contribua fazendo forks e pullrequests.
+contribua com o projeto mootube, fazendo dês de uma tradução simples até uma segurança completa, aceito qualquer ajuda.
 
