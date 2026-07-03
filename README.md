@@ -20,7 +20,7 @@ primeiro abra o terminal do seu servidor e digite isso:
 ```bash
 mkdir ~/mootube && sudo docker run --name mootube-server -p 5000:5000 -v ~/mootube:/mootube/videos pixelcatbr/mootube
 ```
-ou digite isso(opcional)
+ou digite isso (caso queira algo mais simples)
 ```bash
 sudo docker run --name mootube-server -p 5000:5000 pixelcatbr/mootube
 ```
