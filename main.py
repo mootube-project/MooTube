@@ -101,12 +101,58 @@ def serve_video(nome_video):
     
     return response
 
+@app.route('/url', methods=['POST'])
+@rate_limit
+def baixar_urls():
+    urls = ler_urls_do_arquivo()
+    
+    if not urls:
+        return "Nenhuma URL encontrada no arquivo urls.txt.", 400
+    
+    videos_path = Path(PASTA_VIDEOS).resolve()
+    sucessos = 0
+    erros = 0
+    
+    for url in urls:
+        try:
+            print(f"Baixando: {url}")
+            
+            cmd = [
+                "yt-dlp",
+                url,
+                "-o", str(videos_path / "%(title)s.%(ext)s"),
+                "--no-warnings",
+                "--restrict-filenames",
+                "--no-playlist", 
+                "--socket-timeout", "30"
+            ]
+            
+            subprocess.run(
+                cmd, 
+                check=True, 
+                capture_output=True, 
+                text=True,
+                timeout=DOWNLOAD_TIMEOUT
+            )
+            
+            sucessos += 1
+            print(f"✅ Download concluído: {url}")
+            
+        except Exception as e:
+            erros += 1
+            print(f"❌ Erro ao baixar {url}: {e}")
+    
+    if erros == 0:
+        return render_template('sucess.html')
+    elif sucessos > 0:
+        return f"Baixados {sucessos} vídeos, {erros} falhas."
+    else:
+        return render_template('error.html')
 
 @app.route('/pesquisar')
 @rate_limit
 def pesquisar():
-    """Pesquisa e baixa o primeiro vídeo do YouTube"""
-    
+
     termo = request.args.get("busca", "").strip()
     
     if not termo:
@@ -117,7 +163,7 @@ def pesquisar():
 
     termo_seguro = re.sub(r'[;&|`$<>]', '', termo)
     
-    print(f"📥 Baixando: {termo_seguro}")
+    print(f"Baixando: {termo_seguro}")
     
     videos_path = Path(PASTA_VIDEOS).resolve()
     
@@ -141,16 +187,16 @@ def pesquisar():
             timeout=DOWNLOAD_TIMEOUT
         )
         
-        print(f"✅ Download concluído: {termo_seguro}")
+        print(f"Download concluído: {termo_seguro}")
         return render_template('sucess.html')
 
         
     except subprocess.TimeoutExpired:
-        print(f"⏰ Timeout no download")
+        print(f"Timeout no download")
         return render_template('timeout.html')
         
     except subprocess.CalledProcessError as e:
-        print(f"❌ Erro no download: {e.stderr}")
+        print(f"Erro no download: {e.stderr}")
 
         return render_template('error.html')
 
@@ -187,6 +233,10 @@ def deletar_video(nome_video):
 @app.route("/license")
 def license():
     return render_template("license.html")
+      
+@app.route("/features")
+def features():
+    return render_template("features.html")
 if __name__ == '__main__':
 
     app.run(host='0.0.0.0', port=5000)

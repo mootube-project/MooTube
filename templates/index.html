@@ -90,11 +90,17 @@
         <form action="/pesquisar" method="get">
         <input type="search" name="busca" placeholder="Pesquisar vídeos...">
         </form>
+        <form action="/url" method="post">
+            <button type="submit">🔗</button>
+        </form>
         <form action="/atualizar" method="get">
             <button>🔄</button>
         </form>
         <form action="/license" method="get">
             <button>📝</button>
+        </form>
+        <form action="/features" method="get">
+            <button>➕</button>
         </form>
     </header>
     
@@ -111,15 +117,6 @@
                     <form action="/deletar/{{video}}">
                         <button>deletar</button>
                     </form>
-                </div>
-                {% endfor %}
-            </div>
-            <h2>🌎 Suas URLs externas (urls.txt)</h2>
-            <div class="video-grid">
-                {% for url in urls %}
-                <div class="video-card">
-                    <video controls src="{{ url }}" style="width:100%;"></video>
-                    <p>{{ url }}</p>
                 </div>
                 {% endfor %}
             </div>
